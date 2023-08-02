@@ -13,7 +13,7 @@ export default function LoginTable() {
         fetch(`/api?type=makes&user=${user}&pass=${pass}&domain=${domain}`)
             .then((res) => res.json())
             .then((data) => setData(JSON.parse(data.message)));
-        console.log(JSON.parse(data));
+        console.log(data);
     }
 
     return (

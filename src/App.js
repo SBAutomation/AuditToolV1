@@ -4,14 +4,14 @@ import Login from "./Comp/Login/Login";
 import "./Styles/Login.css";
 
 function App() {
-    const [data, setData] = React.useState(null);
+    // const [data, setData] = React.useState(null);
 
-    React.useEffect(() => {
-        fetch("/model?type=makes&user=admin&pass=sunbird")
-            .then((res) => res.json())
-            .then((data) => setData(JSON.parse(data.message)));
-        console.log(JSON.parse(data));
-    }, []);
+    // React.useEffect(() => {
+    //     fetch("/model?type=makes&user=admin&pass=sunbird")
+    //         .then((res) => res.json())
+    //         .then((data) => setData(JSON.parse(data.message)));
+    //     console.log(JSON.parse(data));
+    // }, []);
 
     return (
         <div className="h-full">

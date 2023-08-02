@@ -26,42 +26,16 @@ app.get("/", (req, res) => {
 });
 
 ///model?type=makes&user=admin&pass=sunbird
+
 app.get("/api", async (req, res) => {
-    try {
-        console.log(req.body);
-        var myHeaders = new Headers();
-        myHeaders.append("Authorization", "Basic YWRtaW46c3VuYmlyZA==");
-
-        var requestOptions = {
-            method: "GET",
-            headers: myHeaders,
-            redirect: "follow",
-        };
-
-        const response = await fetch(
-            "https://10.34.3.86/api/v2/makes",
-            requestOptions
-        );
-        const result = await response.text();
-
-        res.json({ message: result });
-    } catch (error) {
-        console.log("error", error);
-        res.status(500).json({
-            error: "Something went wrong. Check the server",
-        });
-    }
-});
-
-app.get("/model", async (req, res) => {
     /* The line `const urlInput = req.query.type;` is extracting the value of the `type` query
     parameter from the request URL. */
     const urlInput = req.query.type;
+    const domain = req.query.domain;
     const user = req.query.user;
     const pass = req.query.pass;
 
     try {
-        console.log(req.body);
         var myHeaders = new Headers();
         // myHeaders.append("Authorization", "Basic YWRtaW46c3VuYmlyZA==");
 
@@ -74,7 +48,7 @@ app.get("/model", async (req, res) => {
         };
 
         const response = await fetch(
-            `https://10.34.3.86/api/v2/dcimoperations/search/${urlInput}/hp`,
+            `https://${domain}/api/v2/dcimoperations/search/${urlInput}/hp`,
             requestOptions
         );
         const result = await response.text();
