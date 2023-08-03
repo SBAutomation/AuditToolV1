@@ -29,44 +29,46 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(buildPath, "index.html"));
 });
 
-app.get("/api", async (req, res) => {
-    // Replace the following with your actual database connection details
-    const config = {
-        user: "admin",
-        password: "WAT499er!",
-        host: "10.34.3.86",
-        database: "raritan",
-        port: 5432, // Replace with your PostgreSQL port if it's different
-    };
+// ----------------------------------------------------------
+// Replace the following with your actual database connection details
+const config = {
+    user: "admin",
+    password: "WAT499er!",
+    host: "10.34.3.86",
+    database: "raritan",
+    port: 5432, // Replace with your PostgreSQL port if it's different
+};
 
-    // Your SQL query
-    const query = "SELECT * from odbc.dcModels";
+// Your SQL query
+const query = "SELECT * from odbc.dcModels";
 
-    // Create a new PostgreSQL client
-    const client = new Client(config);
+// Create a new PostgreSQL client
+const client = new Client(config);
 
-    // Connect to the database
-    client.connect();
-    if (client.connect) {
-        console.log("Connected to database");
+// Connect to the database
+client.connect();
+if (client.connect) {
+    console.log("Connected to database");
+}
+
+// Perform the query
+client.query(query, (err, result) => {
+    if (err) {
+        console.error("Error executing query:", err);
+        client.end();
+        return;
     }
 
-    // Perform the query
-    client.query(query, (err, result) => {
-        if (err) {
-            console.error("Error executing query:", err);
-            client.end();
-            return;
-        }
+    // Close the client connection
+    client.end();
 
-        // Close the client connection
-        client.end();
-
-        // Convert the query result to JSON and print it
-        const jsonResult = JSON.stringify(result.rows);
-        res.json({ message: jsonResult });
-    });
+    // Convert the query result to JSON and print it
+    const jsonResult = JSON.stringify(result.rows);
+    console.log(jsonResult);
+    // res.json({ message: jsonResult });
 });
+// ----------------------------------------------------------
+app.get("/api", async (req, res) => {});
 
 ///model?type=makes&user=admin&pass=sunbird
 //----------------------------------------------------------
