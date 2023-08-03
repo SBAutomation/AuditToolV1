@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../../Img/Logos/SunbirdLogo.svg";
+import axios from "axios";
 
 export default function LoginTable() {
     const [data, setData] = React.useState(null);
@@ -10,10 +11,19 @@ export default function LoginTable() {
         let pass = document.getElementById("pass").value;
         let domain = document.getElementById("domain").value;
 
-        fetch(`/api?type=makes&user=${user}&pass=${pass}&domain=${domain}`)
-            .then((res) => res.json())
-            .then((data) => setData(JSON.parse(data.message)));
-        console.log(data);
+        axios
+            .get(`/api?type=makes&user=${user}&pass=${pass}&domain=${domain}`)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+        // fetch(`/api?type=makes&user=${user}&pass=${pass}&domain=${domain}`)
+        //     .then((res) => res.json())
+        //     .then((data) => setData(data.message));
+        // console.log(data);
     }
 
     return (

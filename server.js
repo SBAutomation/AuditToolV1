@@ -42,7 +42,7 @@ app.get("/api", async (req, res) => {
     };
 
     // Your SQL query
-    const query = `SELECT * from odbc."dcModels"`;
+    const query = `SELECT "ModelName" from odbc."dcModels"`;
 
     // Create a new PostgreSQL client
     const client = new Client(config);
@@ -65,9 +65,9 @@ app.get("/api", async (req, res) => {
         client.end();
 
         // Convert the query result to JSON and print it
-        const jsonResult = JSON.stringify(result.rows);
+        // const jsonResult = JSON.stringify(result.rows);
         // console.log(jsonResult);
-        res.json({ message: jsonResult });
+        res.json(result.rows);
     });
 });
 

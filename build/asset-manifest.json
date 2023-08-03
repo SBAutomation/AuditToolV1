@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.49592b0d.css",
-    "main.js": "/static/js/main.6aa86e47.js",
+    "main.js": "/static/js/main.e9e3fdef.js",
     "static/js/787.cd42cd74.chunk.js": "/static/js/787.cd42cd74.chunk.js",
     "static/media/SunbirdLogo.svg": "/static/media/SunbirdLogo.7b6c9095b8e25fe3e8d582226e6cbe3b.svg",
     "index.html": "/index.html",
     "main.49592b0d.css.map": "/static/css/main.49592b0d.css.map",
-    "main.6aa86e47.js.map": "/static/js/main.6aa86e47.js.map",
+    "main.e9e3fdef.js.map": "/static/js/main.e9e3fdef.js.map",
     "787.cd42cd74.chunk.js.map": "/static/js/787.cd42cd74.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.49592b0d.css",
-    "static/js/main.6aa86e47.js"
+    "static/js/main.e9e3fdef.js"
   ]
 }
