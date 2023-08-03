@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 /* The line `const buildPath = path.join(__dirname, "..", "audit/build");` is creating a file path to
 the `build` directory inside the `audit` directory. */
 // const buildPath = path.join(__dirname, "..", "audit/build");
-const buildPath = path.join(__dirname, "../../audit/build");
+const buildPath = path.join(__dirname, "../../../../audit/build");
 
 app.use(express.static(buildPath));
 
