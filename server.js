@@ -40,13 +40,16 @@ app.get("/api", async (req, res) => {
     };
 
     // Your SQL query
-    const query = 'SELECT * from odbc."dcModels"';
+    const query = "SELECT * from odbc.dcModels";
 
     // Create a new PostgreSQL client
     const client = new Client(config);
 
     // Connect to the database
     client.connect();
+    if (client.connect) {
+        console.log("Connected to database");
+    }
 
     // Perform the query
     client.query(query, (err, result) => {
