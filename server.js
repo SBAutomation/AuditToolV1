@@ -51,7 +51,8 @@ app.get("/api", async (req, res) => {
         };
 
         const response = await fetch(
-            `https://${domain}/api/v2/dcimoperations/search/${urlInput}/hp`,
+            // `https://${domain}/api/v2/dcimoperations/search/${urlInput}/hp`,
+            "https://10.34.3.86/api/v2/dcimoperations/search/makes/hp",
             requestOptions
         );
         const result = await response.text();
