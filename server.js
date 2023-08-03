@@ -40,7 +40,7 @@ const config = {
 };
 
 // Your SQL query
-const query = "SELECT * from odbc.dcModels";
+const query = `SELECT * from odbc."dcModels"`;
 
 // Create a new PostgreSQL client
 const client = new Client(config);
