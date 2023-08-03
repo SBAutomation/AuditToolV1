@@ -1,7 +1,7 @@
 // server/index.js
 /* The line `process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";` is setting the environment variable
 `NODE_TLS_REJECT_UNAUTHORIZED` to the value of `"0"`. */
-// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const express = require("express");
 const path = require("path");

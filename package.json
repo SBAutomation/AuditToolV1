@@ -13,7 +13,7 @@
     },
     "scripts": {
         "start": "node server.js",
-        "build": "react-scripts build"
+        "build": "npm run build"
     },
     "engines": {
         "node": "v18.17.0"
