@@ -42,7 +42,7 @@ app.get("/api", async (req, res) => {
         var myHeaders = new Headers();
         // myHeaders.append("Authorization", "Basic YWRtaW46c3VuYmlyZA==");
 
-        myHeaders.append("Authorization", "Basic " + btoa(`${user}:${pass}`));
+        // myHeaders.append("Authorization", "Basic " + btoa(`${user}:${pass}`));
 
         var requestOptions = {
             method: "GET",
